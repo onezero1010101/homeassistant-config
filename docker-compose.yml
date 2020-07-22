@@ -3,14 +3,14 @@ version: '3'
 services:
   homeassistant:
     container_name: home-assistant
-#    image: homeassistant/home-assistant:stable
+    #image: homeassistant/home-assistant:stable
     image: homeassistant/home-assistant:0.112.4
     volumes:
       - ./config:/config
     environment:
       - TZ=America/Indiana/Indianapolis
-#    devices:
-#      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    #devices:
+      #- "/dev/ttyUSB0:/dev/ttyUSB0"
     restart: unless-stopped
     network_mode: host
 
@@ -29,7 +29,7 @@ services:
     image: esphome/esphome
     ports:
       - 6052:6052
-#    network_mode: host
+    #network_mode: host
     volumes:
       - ./config/esphome:/config
       - /etc/localtime:/etc/localtime:ro
