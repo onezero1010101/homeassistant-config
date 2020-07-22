@@ -1,0 +1,37 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+#    image: homeassistant/home-assistant:stable
+    image: homeassistant/home-assistant:0.112.4
+    volumes:
+      - ./haconfig:/config
+    environment:
+      - TZ=America/Indiana/Indianapolis
+#    devices:
+#      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    restart: unless-stopped
+    network_mode: host
+
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    volumes:
+      - ./mqtt:/mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    restart: unless-stopped
+
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    ports:
+      - 6052:6052
+#    network_mode: host
+    volumes:
+      - ./esphome:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+
+

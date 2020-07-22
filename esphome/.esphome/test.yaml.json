@@ -1,0 +1,14 @@
+{
+  "storage_version": 1,
+  "name": "test",
+  "comment": null,
+  "esphome_version": "1.14.5",
+  "src_version": 1,
+  "arduino_version": null,
+  "address": "test.local",
+  "esp_platform": "ESP8266",
+  "board": "d1_mini",
+  "build_path": null,
+  "firmware_bin_path": null,
+  "loaded_integrations": []
+}
