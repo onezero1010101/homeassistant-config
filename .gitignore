@@ -10,6 +10,7 @@
 .google.token
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+home-assistant_v2.db
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
