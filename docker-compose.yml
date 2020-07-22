@@ -10,7 +10,7 @@ services:
     environment:
       - TZ=America/Indiana/Indianapolis
     # devices:
-      # - "/dev/ttyUSB0:/dev/ttyUSB0"
+    # - "/dev/ttyUSB0:/dev/ttyUSB0"
     restart: unless-stopped
     network_mode: host
 
