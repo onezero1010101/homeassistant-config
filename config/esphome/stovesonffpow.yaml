@@ -4,8 +4,8 @@ esphome:
   board: esp01_1m
 
 wifi:
-  ssid: "onezero"
-  password: "4518bddefd"
+  ssid: !secret wifi_iot_ssid
+  password: !secret wifi_iot_password
 
 # Enable logging
 logger:
