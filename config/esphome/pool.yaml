@@ -21,7 +21,7 @@ dallas:
   
 sensor:
   - platform: dallas
-    #address: 28-ff-de-5d-4-17-3-f
+    # address: 28-ff-de-5d-4-17-3-f
     index: 0
     resolution: 12
     name: "watertemp2"
@@ -30,7 +30,7 @@ sensor:
     unit_of_measurement: "°F"
     
   - platform: dallas
-    #address: 28-ff-67-44-20-17-3-12
+    # address: 28-ff-67-44-20-17-3-12
     index: 1
     resolution: 12
     name: "watertemp1"
@@ -39,7 +39,7 @@ sensor:
     unit_of_measurement: "°F"
 
   - platform: dallas
-    #address: 28-ff-67-44-20-17-3-12
+    # address: 28-ff-67-44-20-17-3-12
     index: 2
     resolution: 12
     name: "watertemp3"
@@ -48,7 +48,7 @@ sensor:
     unit_of_measurement: "°F"
 
   - platform: dallas
-    #address: 28-ff-67-44-20-17-3-12
+    # address: 28-ff-67-44-20-17-3-12
     index: 3
     resolution: 12
     name: "watertemp4"
@@ -58,7 +58,7 @@ sensor:
 
 
 binary_sensor:
-#switch:
+# switch:
   - platform: gpio
     device_class: door
     pin: 

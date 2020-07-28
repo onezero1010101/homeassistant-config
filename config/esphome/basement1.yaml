@@ -4,8 +4,6 @@ esphome:
   platform: ESP8266
   board: d1_mini
 
-
-    
 wifi:
   ssid: !secret wifi_iot_ssid
   password: !secret wifi_iot_password
