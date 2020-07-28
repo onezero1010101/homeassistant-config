@@ -24,12 +24,10 @@ sensor:
     #address:
     index: 0
     resolution: 12
-
     name: "Stove Water"
     filters:
       - lambda: return x * (9.0/5.0) + 32.0;
     unit_of_measurement: "°F"
-    
 
 switch:
   - platform: gpio
@@ -40,10 +38,9 @@ switch:
     name: "relay2"
     pin: D6
 
-    
-#i2c:
-#  sda: 21
-#  scl: 22
-#  scan: True
+# i2c:
+  # sda: 21
+  # scl: 22
+  # scan: True
   
     
