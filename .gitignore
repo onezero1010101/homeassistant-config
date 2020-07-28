@@ -17,7 +17,7 @@ known_devices.yaml
 commit
 ozw
 nodered
-
+mqtt
 
 ## Frenck's ignores
 # Generic ignores
