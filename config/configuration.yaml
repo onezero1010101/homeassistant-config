@@ -33,3 +33,9 @@ telegram_bot:
   allowed_chat_ids:
     - !secret telegram_chatid
 
+
+sensor:
+  - platform: github
+    access_token: !secret github_token
+    repositories:
+      - path: 'onezero1010101/homeassistant-config'
