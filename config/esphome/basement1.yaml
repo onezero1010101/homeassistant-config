@@ -1,0 +1,35 @@
+esphome:
+  name: basement1
+  platform: ESP8266
+  board: d1_mini
+
+
+    
+wifi:
+  ssid: "onezero"
+  password: "4518bddefd"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "3711"
+
+ota:
+sensor:
+  - platform: dht
+    pin: D4
+    model: DHT22
+    temperature:
+      name: "Basement Temperature"
+      filters:
+        - lambda: return x * (9.0/5.0) + 32.0;
+      unit_of_measurement: "°F"
+    humidity:
+      name: "Basement Humidity"
+    update_interval: 60s
+
+binary_sensor:
+  - platform: status
+    name: "Basement1 Status"

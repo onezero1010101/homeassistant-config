@@ -1,0 +1,69 @@
+esphome:
+  name: pool
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "onezero"
+  password: "4518bddefd"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "3711"
+ota:
+
+dallas:
+  - pin: D2
+  
+sensor:
+  - platform: dallas
+    #address: 28-ff-de-5d-4-17-3-f
+    index: 0
+    resolution: 12
+    name: "watertemp2"
+    filters:
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+    
+  - platform: dallas
+    #address: 28-ff-67-44-20-17-3-12
+    index: 1
+    resolution: 12
+    name: "watertemp1"
+    filters:
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+
+  - platform: dallas
+    #address: 28-ff-67-44-20-17-3-12
+    index: 2
+    resolution: 12
+    name: "watertemp3"
+    filters:
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+
+  - platform: dallas
+    #address: 28-ff-67-44-20-17-3-12
+    index: 3
+    resolution: 12
+    name: "watertemp4"
+    filters:
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+
+
+binary_sensor:
+#switch:
+  - platform: gpio
+    device_class: door
+    pin: 
+      number: D6
+      mode: INPUT_PULLUP
+    name: "poolgate"
+
+  - platform: status
+    name: "Pool Status"    

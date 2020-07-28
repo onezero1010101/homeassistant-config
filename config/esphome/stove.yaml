@@ -1,0 +1,48 @@
+esphome:
+  name: stove
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "onezero"
+  password: "4518bddefd"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+dallas:
+  - pin: D4
+  
+sensor:
+  - platform: dallas
+    #address:
+    index: 0
+    resolution: 12
+
+    name: "Stove Water"
+    filters:
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+    
+
+switch:
+  - platform: gpio
+    name: "relay1"
+    pin: D5
+
+  - platform: gpio
+    name: "relay2"
+    pin: D6
+
+    
+#i2c:
+#  sda: 21
+#  scl: 22
+#  scan: True
+  
+    

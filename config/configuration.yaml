@@ -13,5 +13,13 @@ scene: !include scenes.yaml
 panel_iframe:
   esphome:
     title: 'ESPHome'
-    url: 'http://nucbox:6052'
+    url: 'http://nucbox.lan:6052'
     icon: mdi:chip
+
+mqtt:
+  birth_message:
+    topic: 'homeassistant/status'
+    payload: 'online'
+  will_message:
+    topic: 'homeassistant/status'
+    payload: 'offline'

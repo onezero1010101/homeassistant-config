@@ -1,0 +1,29 @@
+esphome:
+  name: stovesonffpow
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: "onezero"
+  password: "4518bddefd"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+sensor:
+  - platform: hlw8012
+    sel_pin: 5
+    cf_pin: 14
+    cf1_pin: 13
+    current:
+      name: "Stove Current"
+    voltage:
+      name: "Stove Voltage"
+    power:
+      name: "Stove Power"
+    update_interval: 60s

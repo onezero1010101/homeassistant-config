@@ -2,7 +2,7 @@
 version: '3'
 services:
   homeassistant:
-    container_name: home-assistant
+    container_name: homeassistant
     # image: homeassistant/home-assistant:stable
     image: homeassistant/home-assistant:0.112.4
     volumes:
@@ -11,7 +11,7 @@ services:
       - TZ=America/Indiana/Indianapolis
     # devices:
     # - "/dev/ttyUSB0:/dev/ttyUSB0"
-    restart: unless-stopped
+#    restart: unless-stopped
     network_mode: host
 
   mosquitto:
@@ -34,3 +34,30 @@ services:
       - ./config/esphome:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
+
+  nodered:
+    container_name: nodered
+    image: nodered/node-red
+    ports:
+      - 1880:1880
+    volumes:
+      - ./nodered:/data
+
+  ozwd:
+    image: openzwave/ozwdaemon:latest
+    container_name: "ozwd"
+    security_opt:
+      - seccomp:unconfined
+#    devices:
+#      - "/dev/ttyUSB0"
+    volumes:
+      - ./ozw:/opt/ozw/config
+    ports:
+      - "1983:1983"
+    environment:
+      MQTT_SERVER: "mosquitto"
+      MQTT_USERNAME: "my-username"
+      MQTT_PASSWORD: "my-password"
+#      USB_PATH: "/dev/ttyUSB0"
+#      OZW_NETWORK_KEY: "0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"
+#    restart: unless-stopped
