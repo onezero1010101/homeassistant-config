@@ -49,15 +49,15 @@ services:
     security_opt:
       - seccomp:unconfined
     # devices:
-      # - "/dev/ttyUSB0"
+    # - "/dev/ttyUSB0"
     volumes:
       - ./ozw:/opt/ozw/config
     ports:
       - "1983:1983"
+    # restart: unless-stopped
     environment:
       MQTT_SERVER: "mosquitto"
       MQTT_USERNAME: "my-username"
       MQTT_PASSWORD: "my-password"
       # USB_PATH: "/dev/ttyUSB0"
       # OZW_NETWORK_KEY: "0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"
-    # restart: unless-stopped
