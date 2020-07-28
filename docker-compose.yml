@@ -11,7 +11,7 @@ services:
       - TZ=America/Indiana/Indianapolis
     # devices:
     # - "/dev/ttyUSB0:/dev/ttyUSB0"
-#    restart: unless-stopped
+    # restart: unless-stopped
     network_mode: host
 
   mosquitto:
@@ -48,8 +48,8 @@ services:
     container_name: "ozwd"
     security_opt:
       - seccomp:unconfined
-#    devices:
-#      - "/dev/ttyUSB0"
+    # devices:
+      # - "/dev/ttyUSB0"
     volumes:
       - ./ozw:/opt/ozw/config
     ports:
@@ -58,6 +58,6 @@ services:
       MQTT_SERVER: "mosquitto"
       MQTT_USERNAME: "my-username"
       MQTT_PASSWORD: "my-password"
-#      USB_PATH: "/dev/ttyUSB0"
-#      OZW_NETWORK_KEY: "0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"
-#    restart: unless-stopped
+      # USB_PATH: "/dev/ttyUSB0"
+      # OZW_NETWORK_KEY: "0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"
+    # restart: unless-stopped
