@@ -1,3 +1,4 @@
+---
 esphome:
   name: pool
   platform: ESP8266

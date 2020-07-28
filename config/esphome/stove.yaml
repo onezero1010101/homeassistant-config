@@ -1,3 +1,4 @@
+---
 esphome:
   name: stove
   platform: ESP8266

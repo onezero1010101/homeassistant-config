@@ -1,3 +1,4 @@
+---
 esphome:
   name: bedroom1
   platform: ESP8266
