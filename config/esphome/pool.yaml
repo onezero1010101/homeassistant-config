@@ -18,7 +18,7 @@ ota:
 
 dallas:
   - pin: D2
-  
+
 sensor:
   - platform: dallas
     # address: 28-ff-de-5d-4-17-3-f
@@ -28,7 +28,7 @@ sensor:
     filters:
       - lambda: return x * (9.0/5.0) + 32.0;
     unit_of_measurement: "°F"
-    
+
   - platform: dallas
     # address: 28-ff-67-44-20-17-3-12
     index: 1
@@ -56,15 +56,13 @@ sensor:
       - lambda: return x * (9.0/5.0) + 32.0;
     unit_of_measurement: "°F"
 
-
 binary_sensor:
-# switch:
   - platform: gpio
     device_class: door
-    pin: 
+    pin:
       number: D6
       mode: INPUT_PULLUP
     name: "poolgate"
 
   - platform: status
-    name: "Pool Status"    
+    name: "Pool Status"

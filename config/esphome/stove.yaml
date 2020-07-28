@@ -18,10 +18,10 @@ ota:
 
 dallas:
   - pin: D4
-  
+
 sensor:
   - platform: dallas
-    #address:
+    # address:
     index: 0
     resolution: 12
     name: "Stove Water"
@@ -39,8 +39,6 @@ switch:
     pin: D6
 
 # i2c:
-  # sda: 21
-  # scl: 22
-  # scan: True
-  
-    
+# sda: 21
+# scl: 22
+# scan: True
