@@ -13,7 +13,8 @@ scene: !include scenes.yaml
 panel_iframe:
   esphome:
     title: 'ESPHome'
-    url: 'http://nucbox.lan:6052'
+#    url: 'http://nucbox.lan:6052'
+    url: 'https://esp.binarybuddha.net'
     icon: mdi:chip
 
 mqtt:

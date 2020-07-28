@@ -30,6 +30,9 @@ services:
     ports:
       - 6052:6052
     # network_mode: host
+    environment:
+      USERNAME: "mike"
+      PASSWORD: "3711"
     volumes:
       - ./config/esphome:/config
       - /etc/localtime:/etc/localtime:ro
