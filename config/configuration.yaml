@@ -23,3 +23,13 @@ mqtt:
   will_message:
     topic: 'homeassistant/status'
     payload: 'offline'
+
+notify: !include notify.yaml
+
+telegram_bot:
+  platform: webhooks
+  parse_mode: html
+  api_key: !secret telegram_api
+  allowed_chat_ids:
+    - !secret telegram_chatid
+
