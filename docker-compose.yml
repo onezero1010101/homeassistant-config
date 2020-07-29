@@ -31,8 +31,8 @@ services:
       - 6052:6052
     # network_mode: host
     environment:
-      USERNAME: "mike"
-      PASSWORD: "3711"
+      USERNAME: "${ESPHOME_USER}"
+      PASSWORD: "${ESPHOME_PASS}"
     volumes:
       - ./config/esphome:/config
       - /etc/localtime:/etc/localtime:ro

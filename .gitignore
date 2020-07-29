@@ -9,6 +9,9 @@
 .cloud
 .google.token
 
+# Ignore docker .env file
+.env
+
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 home-assistant_v2.db
 ip_bans.yaml
